@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<link href="homeStyle.css" type="text/css" rel="stylesheet">
+<title>Alpha EDM</title>
+</head>
+
+<body>
+	
+	<script>
+		function PlaySound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.play();
+			}
+		function StopSound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.pause();
+			thissound.currentTime = 0;
+		}
+		//slideshow
+				var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1} 
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none"; 
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block"; 
+		  dots[slideIndex-1].className += " active";
+		}
+	</script>
+	
+	<div class="head">
+		<div class="logoDiv">
+			<img class="logo" src="../Logo.png" alt="logo">
+		</div>
+			<div class="navbar">
+			<ul class="nav"> 			
+				<a href="#festivals"><li>Festivals</li></a>
+				<a href="#emerging"><li>Emerging</li></a>
+				<a href="#featured"><li>Featured</li></a>	
+			</ul>
+						<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+			  <!-- Full-width images with number and caption text -->
+			  <div class="mySlides fade" style="display: block">
+				<img src="ImagesForWeb/slideshow/slideshowimage1.png" style="width:100%" alt="edm">
+			  </div>
+
+			  <div class="mySlides fade" style="display: none">
+				<img src="ImagesForWeb/slideshow/slideshowimage2.png" style="width:100%" alt="emd">
+			
+			  </div>
+
+			  <div class="mySlides fade" style="display: none">
+				<img src="ImagesForWeb/slideshow/slideshowimage3.png" style="width:100%" alt="edm">
+			  </div>
+
+			  <!-- Next and previous buttons -->
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+
+			<!-- The dots/circles -->
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span> 
+			  <span class="dot" onclick="currentSlide(2)"></span> 
+			  <span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
+		</div>
+	</div>
+	
+	<div id="featured">
+		<h1>Featured Music</h1>
+		<div class="fImages">
+			<img onmouseover="PlaySound('BassCannon')" onmouseout="StopSound('BassCannon')" class="fCover" alt="Bass Cannon" src="ImagesForWeb/featured/basscannon.png">
+			<img onmouseover="PlaySound('DontWorry')" onmouseout="StopSound('DontWorry')" class="fCover" alt="Don't Worry Child" src="ImagesForWeb/featured/dontworrychild.png">
+			<img onmouseover="PlaySound('GetLucky')" onmouseout="StopSound('GetLucky')" class="fCover" alt="Get Lucky" src="ImagesForWeb/featured/getlucky.png">
+			<img onmouseover="PlaySound('Ghosts')" onmouseout="StopSound('Ghosts')" class="fCover" alt="Ghost n Stuff" src="ImagesForWeb/featured/ghostnstuff.png">
+			<img onmouseover="PlaySound('Levels')" onmouseout="StopSound('Levels')" class="fCover" alt="Levels" src="ImagesForWeb/featured/levels.png">
+			<img onmouseover="PlaySound('Lullaby')" onmouseout="StopSound('Lullaby')" class="fCover" alt="Lullaby" src="ImagesForWeb/featured/lullaby.png">
+			<img onmouseover="PlaySound('ScaryMonsters')" onmouseout="StopSound('ScaryMonsters')" class="fCover" alt="Scary Monsters" src="ImagesForWeb/featured/scarymonsters.png">
+			<img onmouseover="PlaySound('Sorry')" onmouseout="StopSound('Sorry')" class="fCover" alt="Sorry" src="ImagesForWeb/featured/sorry.png">
+			<img onmouseover="PlaySound('TheDays')" onmouseout="StopSound('TheDays')" class="fCover" alt="The Days/The Nights" src="ImagesForWeb/featured/thedaysthenights.png">
+			<img onmouseover="PlaySound('WeAreOne')" onmouseout="StopSound('WeAreOne')" class="fCover" alt="We Are One" src="ImagesForWeb/featured/weareone.png">
+			<img onmouseover="PlaySound('WhereAreU')" onmouseout="StopSound('WhereAreU')" class="fCover" alt="Where Are U" src="ImagesForWeb/featured/whereareu.png">
+		</div>
+	</div>
+	<br>
+	<div id="emerging">
+		<h1>Emerging Artists</h1>
+		<div class="eImages">
+			<a class="link" href="http://www.bigwildmusic.com/" target="_blank"><img onmouseover="PlaySound('BigWild')" onmouseout="StopSound('BigWild')" class="eCover" alt="BigWild" src="ImagesForWeb/Emerging/bigwild.png"></a>
+			<a class="link" href="https://clozeemusic.com/" target="_blank"><img onmouseover="PlaySound('CloZee')" onmouseout="StopSound('CloZee')" class="eCover" alt="CloZee" src="ImagesForWeb/Emerging/CloZee.png"></a>
+			<a class="link" href="http://runcrywolf.com/" ><img onmouseover="PlaySound('Crywolf')" onmouseout="StopSound('Crywolf')" class="eCover" alt="Crywolf" src="ImagesForWeb/Emerging/Crywolf.png"></a>
+			<a class="link" href="http://illenium.com/" target="_blank"><img onmouseover="PlaySound('Illenium')" onmouseout="StopSound('Illenium')" class="eCover" alt="Illeium" src="ImagesForWeb/Emerging/Illenium.png"></a>
+			<a class="link" href="https://louisthechild.com/" target="_blank"><img onmouseover="PlaySound('Louis')" onmouseout="StopSound('Louis')" class="eCover" alt="Louis" src="ImagesForWeb/Emerging/louis.png"></a>
+			<a class="link" href="http://www.chris-lake.com/" target="_blank"><img onmouseover="PlaySound('Operator')" onmouseout="StopSound('Operator')" class="eCover" alt="Operator" src="ImagesForWeb/Emerging/operator.png"></a>
+			<a class="link" href="http://officialrezz.com/" target="_blank"><img onmouseover="PlaySound('Rezz')" onmouseout="StopSound('Rezz')" class="eCover" alt="Rezz" src="ImagesForWeb/Emerging/rezz.png"></a>
+			<a class="link" href="https://www.sanholo.com/" target="_blank"><img onmouseover="PlaySound('SanHolo')" onmouseout="StopSound('SanHolo')" class="eCover" alt="SanHolo" src="ImagesForWeb/Emerging/SanHolo.png"></a>
+		</div>
+	</div>
+	<br>
+	<div id="festivals">
+		<h1>Festivals</h1>
+		<div class="fContainer">
+			<a href"https://mexico.electricdaisycarnival.com/en/" target="_blank"><img class="fPoster1" alt="EDC" src="ImagesForWeb/festivals/edc.png"></a>
+			<p class="fText">Lorem ipsum dolor sit amet, causae adipiscing ex est, probo tantas sadipscing ex pri. An mei persius aliquam, ius iuvaret honestatis ad. No est agam exerci, has luptatum adversarium te, mea vero accusam eu. Pri ea adhuc illud diceret, cum eu purto iusto definiebas. Meis incorrupte dissentias ad nam. Choro insolens mediocrem ad cum. Usu ex vitae abhorreant signiferumque.</p>
+		<br>
+		</div>
+		<div class="fContainer2">
+			<a href="http://electriczoo.com/" target="_blank"><img class="fPoster" alt="EZoo" src="ImagesForWeb/festivals/ezoo.png"></a>
+			<p class="fText">Lorem ipsum dolor sit amet, causae adipiscing ex est, probo tantas sadipscing ex pri. An mei persius aliquam, ius iuvaret honestatis ad. No est agam exerci, has luptatum adversarium te, mea vero accusam eu. Pri ea adhuc illud diceret, cum eu purto iusto definiebas. Meis incorrupte dissentias ad nam. Choro insolens mediocrem ad cum. Usu ex vitae abhorreant signiferumque.</p>
+		<br>
+		</div>
+		<div class="fContainer2">
+			<a href="https://www.mysteryland.nl/" target="_blank"><img class="fPoster" alt="Mystery Land" src="ImagesForWeb/festivals/mysteryland.png"></a>
+			<p class="fText">Lorem ipsum dolor sit amet, causae adipiscing ex est, probo tantas sadipscing ex pri. An mei persius aliquam, ius iuvaret honestatis ad. No est agam exerci, has luptatum adversarium te, mea vero accusam eu. Pri ea adhuc illud diceret, cum eu purto iusto definiebas. Meis incorrupte dissentias ad nam. Choro insolens mediocrem ad cum. Usu ex vitae abhorreant signiferumque.</p>
+		<br>
+		</div>
+		<div class="fContainer2">
+			<a href="https://ultramusicfestival.com/" target="_blank"><img class="fPoster" alt="Ultra" src="ImagesForWeb/festivals/ultra.png"></a>
+			<p class="fText">Lorem ipsum dolor sit amet, causae adipiscing ex est, probo tantas sadipscing ex pri. An mei persius aliquam, ius iuvaret honestatis ad. No est agam exerci, has luptatum adversarium te, mea vero accusam eu. Pri ea adhuc illud diceret, cum eu purto iusto definiebas. Meis incorrupte dissentias ad nam. Choro insolens mediocrem ad cum. Usu ex vitae abhorreant signiferumque.</p>
+		</div>
+	</div>
+	
+	
+	<audio id="WeAreOne" src="Songs/Hardwell ft. Alexander Tidebrink - We Are One (Extended Mix) [www.ZippyDownload.xyz].mp3"/>
+	<audio id="TheDays" src="Songs/Avicii - The Days (Lyric Video).mp3"/>
+	<audio id="WhereAreU" src="Songs/1. Jack U (Skrillex & Diplo) Ft. Justin Bieber - Where Are U Now.mp3"/>
+	<audio id="Sorry" src="Songs/02. Justin Bieber - Sorry(128).mp3"/>
+	<audio id="Lullaby" src="Songs/R3HAB x Mike Williams - Lullaby (Official Video).mp3"/>
+	<audio id="ScaryMonsters" src="Songs/03-kill-everybody-copy.mp3"/>
+	<audio id="Levels" src="Songs/LevelsIDOriginalMix.mp3"/>
+	<audio id="Ghosts" src="Songs/ghostnstuff.mp3"/>
+	<audio id="GetLucky" src="Songs/getlucky.mp3"/>
+	<audio id="BassCannon" src="Songs/bass-cannon.mp3"/>
+	<audio id="DontWorry" src="Songs/dontworry.mp3"/>
+	<audio id="BigWild" src="Songs/Emerging/Big Wild - When I Get There.mp3"/>
+	<audio id="CloZee" src="Songs/Emerging/CloZee - Koto.mp3"/>
+	<audio id="Crywolf" src="Songs/Emerging/Crywolf - Stomach It.mp3"/>
+	<audio id="Illenium" src="Songs/Emerging/Gryffin  Illenium ft. Daya - Feel Good [Official Lyric Video].mp3"/>
+	<audio id="Louis" src="Songs/Emerging/Louis the Child - Not Better (feat. Wafia).mp3"/>
+	<audio id="Operator" src="Songs/Emerging/Chris Lake - Operator (Ring Ring) Ft. Dances With White Girls.mp3"/>
+	<audio id="Rezz" src="Songs/Emerging/REZZ  Relax.mp3"/>
+	<audio id="SanHolo" src="Songs/Emerging/San Holo - Light.mp3"/>
+	
+</body>
+</html>
